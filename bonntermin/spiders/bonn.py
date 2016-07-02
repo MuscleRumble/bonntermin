@@ -16,7 +16,7 @@ class BonnSpider(scrapy.Spider):
     form_data = {'casetype_9664': '1', 'casetype_9656': '1'}
     wanted_year = 2016
     wanted_month = 6
-    notification_email = "mail@example.com"
+    notification_email = 'mail@example.com'
 
     def parse(self, response):
         yield scrapy.FormRequest.from_response(response,
@@ -51,7 +51,7 @@ class BonnSpider(scrapy.Spider):
         yield item
 
     def send_mail(self, month_year):
-        subject = "Bonn: Neuer Termin frei im " + month_year
+        subject = 'Bonn: Neuer Termin frei im ' + month_year
         body = self.start_urls[0]
         # you have to set up the mail settings in your own settings.py
         # http://doc.scrapy.org/en/latest/topics/email.html#topics-email-settings
